@@ -1,0 +1,34 @@
+<h4>Basic mat-select</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select formControlName="food">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<br>
+
+<mat-form-field>
+  <mat-label>Cars</mat-label>
+  <select matNativeControl  formControlName="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</mat-form-field>
+<br>
+ <button mat-raised-button color="primary" cdkFocusInitial class="col-md-3" type="submit"
+                    [disabled]="!form.valid">Submit</button>
+</form>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
